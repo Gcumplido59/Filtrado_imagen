@@ -2,22 +2,22 @@ import cv2
 import numpy as np
 import pytesseract
 
-# Ruta a tesseract.exe
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'     # Ruta a tesseract.exe
 
 # Cargar imágenes
-imagen1 = cv2.imread('./Actividad_1_Filtrado_imagen/placa_q.jpg')
-imagen2 = cv2.imread('./Actividad_1_Filtrado_imagen/placa_2.jpg')
+imagen1 = cv2.imread('./placa_q.jpg')
+imagen2 = cv2.imread('./placa_2.jpg')
 
-# Achicar imagen2
-img_achicado = imagen2[::2, ::2]
+
+img_achicado = imagen2[::2, ::2]        # Achicar imagen2
 
 # Aplicar blur gaussiano
 imagenblurgaussiano = cv2.GaussianBlur(imagen1, (35, 35), 0)
 imagenblurgaussiano2 = cv2.GaussianBlur(img_achicado, (35, 35), 0)
 
-# Convertir a HSV para Imagen 2
-hsv2 = cv2.cvtColor(imagenblurgaussiano2, cv2.COLOR_BGR2HSV)
+
+hsv2 = cv2.cvtColor(imagenblurgaussiano2, cv2.COLOR_BGR2HSV)        # Convertir a HSV para Imagen 2
 
 # Rangos HSV definidos manualmente para la Imagen 2
 lower_black2 = np.array([0, 0, 186])
