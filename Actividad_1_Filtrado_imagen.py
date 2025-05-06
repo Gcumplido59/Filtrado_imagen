@@ -2,20 +2,17 @@ import cv2
 import numpy as np
 import pytesseract
 
-
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'     # Ruta a tesseract.exe
 
 # Cargar imagenes de las placas con la libreria OpenCV
-imagen1 = cv2.imread('./placa_q.jpg')
-imagen2 = cv2.imread('./placa_2.jpg')
-
+imagen1 = cv2.imread('./Imagenes/placa_q.jpg')
+imagen2 = cv2.imread('./Imagenes/placa_2.jpg')
 
 img_achicado = imagen2[::2, ::2]        # Se achica la imagen 2 a la mitad de su tamaño
 
 # Aplicacion de filtro gaussiano a la imagen 1 e imagen 2
 imagenblurgaussiano = cv2.GaussianBlur(imagen1, (35, 35), 0)
 imagenblurgaussiano2 = cv2.GaussianBlur(img_achicado, (35, 35), 0)
-
 
 hsv2 = cv2.cvtColor(imagenblurgaussiano2, cv2.COLOR_BGR2HSV)        # Convertir a HSV para Imagen 2
 
