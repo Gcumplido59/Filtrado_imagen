@@ -48,12 +48,18 @@ python --version
 pip --version
 ```
 ### 2. Instalar librerias
-desde la terminal ejecutar:
+desde la terminal de python ejecutar:
 ```bash
 pip install opencv-python
 pip install numpy
 pip install pytesseract
 ```
+###3. Ejecucion del programa
+desde la terminal ejecutar:
+```bash
+python Actividad_1_Filtrado_imagen.py
+```
+
 
 
 
