@@ -54,7 +54,7 @@ pip install opencv-python
 pip install numpy
 pip install pytesseract
 ```
-###3. Ejecucion del programa
+### 3. Ejecucion del programa
 desde la terminal ejecutar:
 ```bash
 python Actividad_1_Filtrado_imagen.py
